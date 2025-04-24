@@ -1,0 +1,18 @@
+# Alle Shell-Skripte als Text behandeln
+*.sh text eol=lf
+
+# .env-Dateien behandeln, aber nie automatisch mergen
+.env merge=union text
+
+# YAML-Dateien (falls vorhanden, z.B. für WG-Konfigs)
+*.yml text eol=lf
+
+# JSON-Dateien
+*.json text eol=lf
+
+# Erlaube keine Ausführungsrechte für .md oder Textdateien
+*.md -text
+*.txt -text
+
+# Make Bash Skripte besser diffbar (optional, mit diff-so-fancy etc.)
+*.sh diff=sh
