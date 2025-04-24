@@ -29,6 +29,7 @@ Before using the script, ensure your system meets the following requirements:
 - 📝 `msmtp` for email sending
 - 📜 `awk`, `bc`, `free`, `bash` for the RAM monitoring script
 - 🛠️ `sudo` access for installation and configuration
+- 🔧 **[bash-utils](https://github.com/mapo-89/bash-utils)** must be installed on your system, as it provides the basic libraries for the script.
 
 ---
 
