@@ -3,7 +3,7 @@
 
 echo 
 
-source ./utils/lib.sh
+source $BASH_UTILS_DIR/lib.sh
 
 # Zielpfad, an dem das Skript installiert sein sollte
 INSTALL_PATH="/usr/local/bin/ram-warning.sh"

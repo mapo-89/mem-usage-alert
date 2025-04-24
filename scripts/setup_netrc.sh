@@ -2,7 +2,7 @@
 # 📧 Einrichten der .netrc-Datei für msmtp
 
 # === 📚 Bibliotheken laden ===
-source ./utils/lib.sh
+source $BASH_UTILS_DIR/lib.sh
 
 NETRC_PATH="$HOME/.netrc"
 

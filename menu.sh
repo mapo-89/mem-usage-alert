@@ -2,12 +2,13 @@
 # ./menu.sh – RAM-Warnsystem Setup & Konfiguration
 
 # Hilfsfunktionen laden
-source ./utils/lib.sh
-source ./utils/menu.sh
+source $BASH_UTILS_DIR/lib.sh
+source $BASH_UTILS_DIR/ui/menu.sh
 
 # === Menü anzeigen ===
 main_menu() {
     clear
+    echo $SCRIPTS_DIR
     print_line "${GREEN}"
     center_colored_text "📈  RAM-Warnsystem & E-Mail-Benachrichtigung" "${GREEN}"
     print_line_new "${GREEN}"

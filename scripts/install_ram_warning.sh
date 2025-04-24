@@ -3,10 +3,7 @@
 
 echo 
 
-source ./utils/lib.sh
-
-# Setze ROOT_DIR von der Umgebung oder als Fallback
-ROOT_DIR="$(pwd)"
+source $BASH_UTILS_DIR/lib.sh
 
 # Zielpfad für das Skript
 TARGET="/usr/local/bin/ram-warning.sh"
