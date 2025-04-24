@@ -26,6 +26,7 @@ Bevor du das Skript verwendest, stelle sicher, dass dein System die folgenden An
 - 📝 `msmtp` für den E-Mail-Versand
 - 📜 `awk`, `bc`, `free`, `bash` für das RAM-Überwachungsskript
 - 🛠️ `sudo`-Zugriff für die Installation und Konfiguration
+- 🔧 **[bash-utils](https://github.com/mapo-89/bash-utils)** muss auf deinem System installiert sein, da es die Basisbibliotheken für das Skript stellt.
 
 
 ## 🚀 Schnellstart
@@ -56,10 +57,6 @@ SMTP_PASSWORD="PASSWORD"             # Dein SMTP-Passwort
 SMTP_FROM="from@example.com"         # Absender-E-Mail-Adresse
 TEST_EMAIL="test@example.com"        # E-Mail-Adresse für den Testversand
 ALERT_EMAIL="alert@example.com"      # E-Mail-Adresse für RAM-Warnungen
-
-# 📁 Verzeichnisse (automatisch angelegt)
-SCRIPTS_DIR="./scripts"
-LOG_DIR="./logs"
 
 # ⚠️ Maximale RAM-Auslastung (in Prozent) für Warnungen
 RAM_LIMIT=90
