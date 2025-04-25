@@ -1,14 +1,24 @@
 #!/bin/bash
 # ./menu.sh – RAM-Warnsystem Setup & Konfiguration
 
-# Hilfsfunktionen laden
-source $BASH_UTILS_DIR/lib.sh
-source $BASH_UTILS_DIR/ui/menu.sh
+# === 📌 Projekt-Kontext initialisieren ===
+SCRIPT_PATH="${BASH_SOURCE[0]}"
+SCRIPT_DIR="$(cd "$(dirname "$SCRIPT_PATH")" && pwd)"
+ROOT_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
+SCRIPTS_DIR="$SCRIPT_DIR/scripts"       # ✅ globaler Pfad zu allen Scripts
+LOG_DIR="$SCRIPT_DIR/logs"
+
+export ROOT_DIR SCRIPT_DIR SCRIPTS_DIR LOG_DIR
+
+# === 🔗 Bash-Utils laden ===
+# Optional: Pfad zu den Bash-Utils überschreiben (wenn lokal statt global)
+# BASH_UTILS_DIR="$ROOT_DIR/vendor/bash-utils"
+source "${BASH_UTILS_DIR:-/usr/local/bin/bash-utils}/lib.sh"
+source "${BASH_UTILS_DIR:-/usr/local/bin/bash-utils}/ui/menu.sh"
 
 # === Menü anzeigen ===
 main_menu() {
     clear
-    echo $SCRIPTS_DIR
     print_line "${GREEN}"
     center_colored_text "📈  RAM-Warnsystem & E-Mail-Benachrichtigung" "${GREEN}"
     print_line_new "${GREEN}"

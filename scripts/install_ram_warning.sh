@@ -3,7 +3,8 @@
 
 echo 
 
-source $BASH_UTILS_DIR/lib.sh
+# Bash-Utils einbinden
+source "${BASH_UTILS_DIR:-/usr/local/bin/bash-utils}/lib.sh"
 
 # Zielpfad für das Skript
 TARGET="/usr/local/bin/ram-warning.sh"
@@ -11,8 +12,8 @@ TARGET="/usr/local/bin/ram-warning.sh"
 echo
 log_info "📥  Installiere ram-warning.sh nach $TARGET..."
 
-# Ersetze '__ROOT_DIR__' mit dem aktuellen ROOT_DIR in der Vorlage
-sed "s|__ROOT_DIR__|$ROOT_DIR|g" ./ram-warning.sh > "$TARGET"
+# Ersetze '__SCRIPT_DIR__' mit dem aktuellen SCRIPT_DIR in der Vorlage
+sed "s|__SCRIPT_DIR__|$SCRIPT_DIR|g" ./ram-warning.sh > "$TARGET"
 
 # Mach das Skript ausführbar
 chmod +x "$TARGET"

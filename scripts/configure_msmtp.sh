@@ -3,7 +3,7 @@
 
 # ==== 📦 Abhängigkeiten prüfen und installieren ====
 
-source $BASH_UTILS_DIR/lib.sh
+source "${BASH_UTILS_DIR:-/usr/local/bin/bash-utils}/lib.sh"
 
 log_info "📦 Prüfe auf benötigte Pakete: msmtp & msmtp-mta..."
 if ! dpkg -s msmtp msmtp-mta &> /dev/null; then
