@@ -95,8 +95,8 @@ Das Tool bietet ein interaktives Menü, mit dem du verschiedene Aktionen durchf�
 5. **⏰ Cronjob zur Überwachung einrichten**  
    Setzt einen Cronjob, der regelmäßig die RAM-Auslastung überprüft und bei Überschreitung des festgelegten Limits eine E-Mail-Benachrichtigung sendet.
 
-6. **📜 Logs anzeigen**  
-   Zeigt die Log-Dateien an, um die Ausgaben des Skripts zu überprüfen und Fehler zu diagnostizieren.
+6. **📋 Menü zur Verwaltung von Cronjobs & Logs**  
+   Das Projekt enthält zusätzlich ein interaktives Menü, mit dem du Cronjobs verwalten, Logs einsehen und Test-E-Mails versenden kannst.
 
 7. **❌ Beenden**  
    Beendet das Menü und das Skript.

@@ -103,8 +103,8 @@ The tool provides an interactive menu where you can perform various actions. Aft
 5. **⏰ Set Up Monitoring Cronjob**  
    Creates a cronjob that regularly checks RAM usage and sends an email alert if the defined limit is exceeded.
 
-6. **📜 View Logs**  
-   Displays log files to review script output and diagnose errors.
+6. **📋 Menu for managing cronjobs & logs**  
+   The project also contains an interactive menu with which you can manage cronjobs, view logs and send test e-mails.
 
 7. **❌ Exit**  
    Exits the menu and closes the script.

@@ -8,6 +8,9 @@ ROOT_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
 SCRIPTS_DIR="$SCRIPT_DIR/scripts"       # ✅ globaler Pfad zu allen Scripts
 LOG_DIR="$SCRIPT_DIR/logs"
 
+# 🔓 Skripte ausführbar machen
+find "$SCRIPT_DIR" -type f -name "*.sh" -exec chmod +x {} \;
+
 export ROOT_DIR SCRIPT_DIR SCRIPTS_DIR LOG_DIR
 
 # === 🔗 Bash-Utils laden ===
@@ -33,7 +36,7 @@ function show_menu {
     echo -e "${CYAN}3)${NC} 🔐  .netrc-Datei für msmtp manuell einrichten"
     echo -e "${CYAN}4)${NC} 🧪  RAM-Warnung testen (manueller Test)"
     echo -e "${CYAN}5)${NC} ⏰  Cronjob zur Überwachung einrichten"
-    echo -e "${CYAN}6)${NC} 📜  Logs anzeigen"
+    echo -e "${CYAN}6)${NC} 📋  Cronjob-Checker starten"
     echo -e "${CYAN}Esc)${NC} ❌ Beenden"
 }
 
@@ -59,9 +62,8 @@ function handle_selection {
         5)  action="Cronjob einrichten"
             echo "[$timestamp] START: $action" >> "$LOG_FILE"
             $SCRIPTS_DIR/setup_cron.sh ;;
-        6)  action="Logs anzeigen"
-            echo "[$timestamp] START: $action" >> "$LOG_FILE"
-            less ~/.msmtp.log ;;
+        6)  action="Cronjob-Checker anzeigen"
+            $SCRIPTS_DIR/cron-checker.sh  ;;
         $'\e') echo -e "${RED}❌  Beenden...${NC}"; exit 0 ;;
         *) log_warning --no-log "⚠️ Ungültige Auswahl! Bitte gib eine Zahl zwischen 1 und 6 ein." ;;
     esac
