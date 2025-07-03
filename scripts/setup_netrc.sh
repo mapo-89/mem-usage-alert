@@ -46,14 +46,5 @@ log_warning "Achte darauf, dass diese Datei vertraulich bleibt."
 read -p "📤 Möchtest du eine Testmail senden? (y/N): " confirm
 if [[ "$confirm" =~ ^[Yy]$ ]]; then
   require_var "TEST_EMAIL" "Empfängeradresse (TEST_EMAIL) in .env"
-  printf "%s\n" \
-    "Subject: Testmail von $(hostname)" \
-    "To: $TEST_EMAIL" \
-    "Content-Type: text/plain; charset=UTF-8" \
-    "Content-Transfer-Encoding: 8bit" \
-    "" \
-    "Dies ist eine Testmail über msmtp mit Umlauten: ü, ä, ö, ß." | \
-    msmtp "$TEST_EMAIL" \
-    && log_success "📨 Testmail erfolgreich gesendet an $TEST_EMAIL." \
-    || log_error "Testmail konnte nicht gesendet werden."
+  send_testmail
 fi
