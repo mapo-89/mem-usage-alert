@@ -4,7 +4,7 @@
 echo 
 
 # Bash-Utils einbinden
-source "${BASH_UTILS_DIR:-/usr/local/bin/bash-utils}/lib.sh"
+source "${BASH_UTILS_DIR:-/usr/local/bin/bash-utils}/core/lib.sh"
 
 # Zielpfad für das Skript
 TARGET="/usr/local/bin/ram-warning.sh"

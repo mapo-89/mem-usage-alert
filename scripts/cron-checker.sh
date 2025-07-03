@@ -8,7 +8,7 @@ TEST_EMAIL_FLAG="--test"
 # === 🔗 Bash-Utils laden ===
 # Optional: Pfad zu den Bash-Utils überschreiben (wenn lokal statt global)
 # BASH_UTILS_DIR="$ROOT_DIR/vendor/bash-utils"
-source "${BASH_UTILS_DIR:-/usr/local/bin/bash-utils}/lib.sh"
+source "${BASH_UTILS_DIR:-/usr/local/bin/bash-utils}/core/lib.sh"
 source "${BASH_UTILS_DIR:-/usr/local/bin/bash-utils}/ui/menu.sh"
 
 # === 🧭 Menü anzeigen ===

@@ -4,7 +4,7 @@
 # Setze ROOT_DIR aus der installierten Version (wird ersetzt)
 SCRIPT_DIR="__SCRIPT_DIR__"
 
-source "${BASH_UTILS_DIR:-/usr/local/bin/bash-utils}/lib.sh"
+source "${BASH_UTILS_DIR:-/usr/local/bin/bash-utils}/core/lib.sh"
 
 timestamp=$(date "+%Y-%m-%d %H:%M:%S")
 
