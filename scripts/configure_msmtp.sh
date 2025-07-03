@@ -1,4 +1,4 @@
-#!/bin/bash
+﻿#!/bin/bash
 # 📧 Konfiguriert msmtp mit Login-Daten aus ~/.netrc
 
 # ==== 📦 Abhängigkeiten prüfen und installieren ====
@@ -68,7 +68,14 @@ fi
 read -p "📤 Möchtest du eine Testmail senden? (y/N): " confirm
 if [[ "$confirm" =~ ^[Yy]$ ]]; then
   require_var "TEST_EMAIL" "Empfängeradresse (TEST_EMAIL) in .env"
-  echo -e "Subject: Testmail von $(hostname)\n\nDies ist eine Testmail über msmtp." | msmtp "$TEST_EMAIL" \
+  printf "%s\n" \
+    "Subject: Testmail von $(hostname)" \
+    "To: $TEST_EMAIL" \
+    "Content-Type: text/plain; charset=UTF-8" \
+    "Content-Transfer-Encoding: 8bit" \
+    "" \
+    "Dies ist eine Testmail über msmtp mit Umlauten: ü, ä, ö, ß." | \
+    msmtp "$TEST_EMAIL" \
     && log_success "📨 Testmail erfolgreich gesendet an $TEST_EMAIL." \
     || log_error "Testmail konnte nicht gesendet werden."
 fi
